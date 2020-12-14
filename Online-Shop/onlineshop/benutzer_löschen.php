@@ -6,7 +6,7 @@
 
     mysqli_query($conn,$sql);
 
-    header('Location: benutzeruebersicht.php');
+    header('Location: benutzerübersicht.php');
     exit;
 
 ?>

@@ -16,7 +16,6 @@
         echo "<th>Benutzername</th>";
         echo "<th>E-Mail</th>";
         echo "<th>Benutzertyp</th>";
-        echo "<th>Passwort</th>";
         echo "<th></th>";
         echo "<th></th>";
         echo "</tr>";

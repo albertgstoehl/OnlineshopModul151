@@ -15,6 +15,7 @@
     if($passwort == $ergebnislogin['passwort']){
         session_start();
         $_SESSION['benutzertyp'] = $ergebnislogin['benutzertyp'];
+        $_SESSION['vorname'] = $ergebnislogin['vorname'];
         
         header('Location: shop.php');
     }else{

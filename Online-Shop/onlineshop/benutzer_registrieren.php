@@ -24,15 +24,10 @@
                         <label for="email">E-Mail:</label>
                         <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
                     </div>
-                    <div class="form-group">
-                        <label for="benutzertyp">Benutzertyp:</label>
-                        <select class="form-control" name="benutzertyp">
-                            <option>benutzer</option>
-                        </select>
-                    </div>
+                    <input type="hidden" name="benutzertyp" value="benutzer">
                     <div class="form-group">
                         <label for="passwort">Passwort:</label>
-                        <input type="text" class="form-control" name="passwort" required>
+                        <input type="password" class="form-control" name="passwort" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Erstellen</button>
                     <a class="btn btn-primary" href="login.php" role="button">Zurück</a>

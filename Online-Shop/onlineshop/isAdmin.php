@@ -5,7 +5,7 @@ if(!isset($_SESSION))
 }
 if(isset($_SESSION['benutzertyp'])&&$_SESSION['benutzertyp']=="admin")
 {
-    echo "Benutzertyp: ".$_SESSION['benutzertyp'];
+    echo "Hallo: ".$_SESSION['vorname'];
 }else{
     header('Location: shop.php');
 }

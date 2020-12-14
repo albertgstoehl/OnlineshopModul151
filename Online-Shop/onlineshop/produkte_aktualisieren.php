@@ -21,9 +21,11 @@
       echo"<p><a href='benutzerübersicht.php?id='>Zurück</a></p>";
     }else{
         $sql = "UPDATE benutzer SET vorname = '$vorname', nachname ='$nachname', adresse = '$adresse',  passwort = '$passwort', benutzername='$benutzername', benutzertyp='$benutzertyp', email='$email' WHERE benutzerID='$id'";
+        echo $sql;
+        echo($passwort);
         $conn->query($sql);
         echo(mysqli_error($conn));
-        header('Location: benutzerübersicht.php');
+        //header('Location: benutzerübersicht.php');
     }
     exit();
 ?>

@@ -1,12 +1,5 @@
 <?php
-    session_start();
-    /*include("dbconnect.php");
-    if(isset($_SESSION['benutzer']))
-    {
-    echo "Benutzer: ".$_SESSION['benutzer'];
-    }else{
-    header('Location: index.php');
-    }*/
+    include("isAdmin.php");
 ?>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="js/bootstrap.min.js">
@@ -46,7 +39,7 @@
                         <input type="text" class="form-control" name="passwort" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Erstellen</button>
-                    <a class="btn btn-primary" href="benutzeruebersicht.php" role="button">Zurück</a>
+                    <a class="btn btn-primary" href="benutzerübersicht.php" role="button">Zurück</a>
                 </form>
 
 </div>
