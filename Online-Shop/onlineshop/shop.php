@@ -27,7 +27,7 @@ if(isset($_SESSION['benutzertyp']))
         <?php
             if(isset($_SESSION['benutzertyp'])){
                 if($_SESSION['benutzertyp']=="admin")
-                    echo '<a href="benutzerübersicht.php" class="float-left btn btn-outline-dark">Benutzerübersicht</a>';
+                    echo '<a href="benutzeruebersicht.php" class="float-left btn btn-outline-dark">Benutzerübersicht</a>';
                     echo '<a href="logout.php" class="float-left btn btn-outline-danger">Logout</a>';
             }else{
                     echo '<a href="login.php" class="float-left btn btn-outline-success">Login</a>';

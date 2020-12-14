@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <form method="post" action="benutzer_aktualisieren.php">
-                <input type="hidden" name="id" value="<?php echo $i['id']?>">
+                <input type="hidden" name="id" value="<?php echo $id?>">
                     <div class="form-group">
                         <label for="vorname">Vorname:</label>
                         <input type="text" name="vorname" class="form-control" value="<?php echo $i['vorname']?>" required>
@@ -50,7 +50,7 @@
                         <input type="text" class="form-control" name="passwort" value="<?php echo $i['passwort']?>"required>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    <a class="btn btn-primary" href="benutzerübersicht.php" role="button">Back</a>
+                    <a class="btn btn-primary" href="benutzeruebersicht.php" role="button">Back</a>
                 </form>
             </div>
         </div>

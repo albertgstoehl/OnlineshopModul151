@@ -1,6 +1,4 @@
 <?php
-    include("isAdmin.php");
-
     include("dbconnect.php");
     if(isset($_POST['search'])){
       $suchtext = $_POST['search'];
