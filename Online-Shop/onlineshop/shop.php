@@ -1,7 +1,7 @@
 <?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
+    if(!isset($_SESSION))
+    {
+        session_start();
     }
 ?>
 <!DOCTYPE html>
@@ -25,13 +25,13 @@
                         echo '<a href="benutzeruebersicht.php" class="float-left btn btn-outline-dark">Benutzerübersicht</a>';
                         echo '<a href="produkt_erstellen.php" class="float-left btn btn-outline-success">Produkt hinzufügen</a>';
                     }else{
-                        echo '<a href="logout.php" class="float-left btn btn-outline-success">Warenkorb</a>';
+                        echo '<a href="warenkorb.php" class="float-left btn btn-outline-success">Warenkorb</a>';
                     }
                     echo '<a href="logout.php" class="float-left btn btn-outline-danger">Logout</a>';
 
                 }else{
                     echo '<a href="login.php" class="float-left btn btn-outline-success">Login</a>';
-                    echo '<a href="login.php" class="float-left btn btn-outline-success">Warenkorb</a>';
+                    echo '<a href="warenkorb.php" class="float-left btn btn-outline-success">Warenkorb</a>';
                 }
             ?>
         </div>

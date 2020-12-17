@@ -21,7 +21,7 @@
         <h1>Produkt Bearbeiten</h1>
         <div class="row">
             <div class="col-sm-6">
-                <form method="post" action="produkte_aktualisieren.php">
+                <form method="post" action="produkt_aktualisieren.php">
                 <input type="hidden" name="id" value="<?php echo $id?>">
                     <div class="form-group">
                         <label for="name">Name:</label>

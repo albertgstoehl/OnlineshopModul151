@@ -1,9 +1,4 @@
 <?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    }
-    
     include("dbconnect.php");
     if(isset($_POST['search'])){
       $suchtext = $_POST['search'];
@@ -32,10 +27,10 @@
             echo "<td>".$lagerbestand."</td>";
             if(isset($_SESSION['benutzertyp'])&&$_SESSION['benutzertyp']=="admin")
             {
-              echo "<td><a href='produkte_editieren.php?id=".$id."' class='btn btn-primary edit' role='button'>Bearbeiten</a></td>";
-              echo "<td><a href='produkte_löschen.php?id=".$id."' class='btn btn-danger edit red' role='button'>Löschen</a></td>";
+              echo "<td><a href='produkt_editieren.php?id=".$id."' class='btn btn-primary edit' role='button'>Bearbeiten</a></td>";
+              echo "<td><a href='produkt_loeschen.php?id=".$id."' class='btn btn-danger edit red' role='button'>Löschen</a></td>";
             }else{
-                echo "<td><a href='produkte_löschen.php?id=".$id."' class='btn btn-success' role='button'>Kaufen</a></td>";
+                echo "<td><a href='warenkorb_hinzufuegen.php?id=".$id."' class='btn btn-success' role='button'>Kaufen</a></td>";
             }
             echo "</tr>";
         }            
