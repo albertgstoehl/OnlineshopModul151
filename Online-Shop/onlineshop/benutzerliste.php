@@ -2,7 +2,7 @@
     include("dbconnect.php");
     if(isset($_POST['search'])){
       $suchtext = $_POST['search'];
-      $result = $conn->query("SELECT * FROM `benutzer` WHERE benutzername LIKE '%$suchtext%'");
+      $result = $conn->query("SELECT * FROM `benutzer` WHERE vorname LIKE '%$suchtext%'");
     }else{
       $result = $conn->query("SELECT * FROM `benutzer`");
     }
@@ -35,7 +35,7 @@
             echo "<td>".$email."</td>";
             echo "<td>".$benutzertyp."</td>";
             echo "<td><a href='benutzer_editieren.php?id=".$id."' class='btn btn-primary edit' role='button'><i class='material-icons md-18'>Bearbeiten</i></a></td>";
-            echo "<td><a href='benutzer_löschen.php?id=".$id."' class='btn btn-danger edit red' role='button'><i class='material-icons md-18'>Löschen</i></a></td>";
+            echo "<td><a href='benutzer_loeschen.php?id=".$id."' class='btn btn-danger edit red' role='button'><i class='material-icons md-18'>Löschen</i></a></td>";
             echo "</tr>";
         }            
         echo "</table>";

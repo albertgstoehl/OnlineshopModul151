@@ -19,13 +19,13 @@
 
     if($ergebnismailadresse->num_rows > 0){
       echo '<p>E-Mail-Adresse im System bereits vorhanden. Bitte verwenden Sie eine andere E-Mail-Adresse.</p>';
-      echo '<a class="btn btn-primary" href="benutzerübersicht.php" role="button">Zurück</a>';
+      echo '<a class="btn btn-primary" href="benutzeruebersicht.php" role="button">Zurück</a>';
     }else{
         $sql = "INSERT INTO benutzer(vorname,nachname,adresse,benutzername,email,benutzertyp,passwort)
             VALUES('$vorname','$nachname','$adresse','$benutzername','$email','$benutzertyp','$passwort')";
         $conn->query($sql);
         echo mysqli_error($conn);
-        //header('Location: benutzerübersicht.php');
+        header('Location: benutzeruebersicht.php');
     }
     exit();
 ?>

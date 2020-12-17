@@ -1,11 +1,5 @@
 <?php
-/*session_start();
-if(isset($_SESSION['benutzer']))
-{
-echo "Benutzer: ".$_SESSION['benutzer'];
-}else{
-header('Location: index.php');
-}*/
+    include("isAdmin.php");
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -19,27 +13,27 @@ header('Location: index.php');
 <?php
     $id = $_GET["id"];
     include("dbconnect.php");
-    $sql = "SELECT * from produkte where produktID = '".$id."';";
+    $sql = "SELECT * from produkt where produktID = '".$id."';";
     $res = $conn->query($sql);
     $i = $res->fetch_assoc();
 ?>
     <div class="container">
-        <h1>Benutzer bearbeiten</h1>
+        <h1>Produkt Bearbeiten</h1>
         <div class="row">
             <div class="col-sm-6">
-                <form method="post" action="update_user.php">
-                <input type="hidden" name="id" value="<?php echo $i['id']?>">
+                <form method="post" action="produkte_aktualisieren.php">
+                <input type="hidden" name="id" value="<?php echo $id?>">
                     <div class="form-group">
                         <label for="name">Name:</label>
                         <input type="text" name="name" class="form-control" value="<?php echo $i['name']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="preis">Preis:</label>
-                        <input type="test" name="preis" class="form-control" value="<?php echo $i['preis']?>" required>
+                        <input type="number" name="preis" class="form-control" value="<?php echo $i['preis']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="lagerbestand">Lagerbestand:</label>
-                        <input type="text" name="lagerbestand" class="form-control" value="<?php echo $i['lagerbestand']?>" required>
+                        <input type="number" name="lagerbestand" class="form-control" value="<?php echo $i['lagerbestand']?>" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <a class="btn btn-primary" href="shop.php" role="button">Back</a>

@@ -19,7 +19,7 @@
                                 <h3 class="mb-0">Login</h3>
                             </div>
                             <div class="card-body">
-                                <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST" action="login_benutzer.php">
+                                <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST" action="benutzer_login.php">
                                     <div class="form-group">
                                         <label for="benutzername">Benutzername</label>
                                         <input type="text" class="form-control form-control-lg rounded-0" name="benutzername" id="benutzername" required="">

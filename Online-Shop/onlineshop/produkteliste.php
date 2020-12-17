@@ -7,9 +7,9 @@
     include("dbconnect.php");
     if(isset($_POST['search'])){
       $suchtext = $_POST['search'];
-      $result = $conn->query("SELECT * FROM `produkte` WHERE name LIKE '%$suchtext%'");
+      $result = $conn->query("SELECT * FROM produkt WHERE name LIKE '%$suchtext%'");
     }else{
-      $result = $conn->query("SELECT * FROM `produkte`");
+      $result = $conn->query("SELECT * FROM produkt");
     }
     if ($result->num_rows > 0) {
         // output data of each row
@@ -32,8 +32,10 @@
             echo "<td>".$lagerbestand."</td>";
             if(isset($_SESSION['benutzertyp'])&&$_SESSION['benutzertyp']=="admin")
             {
-              echo "<td><a href='produkte_editieren.php?id=".$id."' class='btn btn-primary edit' role='button'><i class='material-icons md-18'>Bearbeiten</i></a></td>";
-              echo "<td><a href='produkte_löschen.php?id=".$id."' class='btn btn-danger edit red' role='button'><i class='material-icons md-18'>Löschen</i></a></td>";
+              echo "<td><a href='produkte_editieren.php?id=".$id."' class='btn btn-primary edit' role='button'>Bearbeiten</a></td>";
+              echo "<td><a href='produkte_löschen.php?id=".$id."' class='btn btn-danger edit red' role='button'>Löschen</a></td>";
+            }else{
+                echo "<td><a href='produkte_löschen.php?id=".$id."' class='btn btn-success' role='button'>Kaufen</a></td>";
             }
             echo "</tr>";
         }            

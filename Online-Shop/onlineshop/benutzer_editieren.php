@@ -39,18 +39,18 @@
                     </div>
                     <div class="form-group">
                         <label for="email">E-Mail:</label>
-                        <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email" value="<?php echo $i['email']?>"required>
+                        <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email" value="<?php echo $i['email']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="benutzertyp">Benutzertyp:</label>
-                        <input type="text" class="form-control" name="benutzertyp" value="<?php echo $i['benutzertyp']?>"required>
+                        <input type="text" class="form-control" name="benutzertyp" value="<?php echo $i['benutzertyp']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="passwort">Passwort:</label>
-                        <input type="text" class="form-control" name="passwort" value="<?php echo $i['passwort']?>"required>
+                        <input type="text" class="form-control" name="passwort" value="<?php echo $i['passwort']?>" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    <a class="btn btn-primary" href="benutzerübersicht.php" role="button">Back</a>
+                    <a class="btn btn-primary" href="benutzeruebersicht.php" role="button">Back</a>
                 </form>
             </div>
         </div>

@@ -19,8 +19,8 @@
         <a href="benutzer_erstellen.php" class="float-left btn btn-outline-success">Neuer Benutzer</a>
         <a href="logout.php" class="float-left btn btn-outline-danger">Logout</a>
     </div>
-    <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="search">
+    <form class="form-inline" method="post">
+        <input class="form-control mr-sm-2" type="search" placeholder="" name="search">
         <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Suchen</button>
     </form>
     </nav>

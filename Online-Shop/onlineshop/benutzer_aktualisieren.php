@@ -18,12 +18,12 @@
 
     if($ergebnismailadresse->num_rows==1 && $ergebnismailadresseArray['email'] != $email){
       echo'<p>E-Mail-Adresse im System bereits vorhanden. Bitte verwenden Sie eine andere E-Mail-Adresse.</p>';
-      echo"<p><a href='benutzerübersicht.php?id='>Zurück</a></p>";
+      echo"<p><a href='benutzeruebersicht.php?id='>Zurück</a></p>";
     }else{
         $sql = "UPDATE benutzer SET vorname = '$vorname', nachname ='$nachname', adresse = '$adresse',  passwort = '$passwort', benutzername='$benutzername', benutzertyp='$benutzertyp', email='$email' WHERE benutzerID='$id'";
         $conn->query($sql);
         echo(mysqli_error($conn));
-        header('Location: benutzerübersicht.php');
+        header('Location: benutzeruebersicht.php');
     }
     exit();
 ?>

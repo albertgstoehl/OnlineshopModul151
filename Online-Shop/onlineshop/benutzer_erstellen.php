@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="js/bootstrap.min.js">
 
 <div class="container">
-<form method="post" action="benutzer_hinzufügen.php">
+<form method="post" action="benutzer_hinzufuegen.php">
                 <input type="hidden" name="id">
                     <div class="form-group">
                         <label for="vorname">Vorname:</label>
@@ -39,7 +39,7 @@
                         <input type="text" class="form-control" name="passwort" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Erstellen</button>
-                    <a class="btn btn-primary" href="benutzerübersicht.php" role="button">Zurück</a>
+                    <a class="btn btn-primary" href="benutzeruebersicht.php" role="button">Zurück</a>
                 </form>
 
 </div>

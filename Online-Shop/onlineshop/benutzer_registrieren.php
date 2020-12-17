@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="js/bootstrap.min.js">
 
 <div class="container">
-<form method="post" action="benutzer_hinzufügen.php">
+<form method="post" action="benutzer_hinzufuegen.php">
                 <input type="hidden" name="id">
                     <div class="form-group">
                         <label for="vorname">Vorname:</label>
