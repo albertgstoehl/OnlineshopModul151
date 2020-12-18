@@ -17,7 +17,7 @@
     <div class="float-left">
         <?php
             echo '<a href="shop.php" class="float-left btn btn-outline-dark">Shop</a>';
-        echo '<a href="shop.php" class="float-left btn btn-outline-success">Kasse</a>';
+            echo '<a href="kasse.php" class="float-left btn btn-outline-success">Kasse</a>';
         ?>
     </div>
 </nav>
