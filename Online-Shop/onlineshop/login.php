@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Onlineshop</title>
 
+    <!--Bootstrap wird eingebunden-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="js/bootstrap.min.js">
 </head>
 <body>
+    <!--Login Feld-->
     <div class="container">
         <div class="row">
             <div class="col-md-12 min-vh-100 d-flex flex-column justify-content-center">

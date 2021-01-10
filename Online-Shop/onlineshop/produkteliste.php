@@ -1,22 +1,29 @@
 <?php
+    //Verbindung zu Datenbank wird hergestellt
     include("dbconnect.php");
     if(isset($_POST['search'])){
       $suchtext = $_POST['search'];
+      //Falls eine Suchabfrage getätigt wurde, wird nach dem Suchtext gesucht
       $result = $conn->query("SELECT * FROM produkt WHERE name LIKE '%$suchtext%'");
     }else{
+      //Sonst werden alle Datensätze angezeigt
       $result = $conn->query("SELECT * FROM produkt");
     }
     if ($result->num_rows > 0) {
-        // output data of each row
-        echo "<table class='table'>";
+        //Wenn das Resultat mindestens 1 Datenreihen enthält
+        echo "<table class='table produkte'>";
         echo "<tr>";
         echo "<th>Name</th>";
         echo "<th>Preis</th>";
         echo "<th>Lagerbestand</th>";
         echo "<th></th>";
-        echo "<th></th>";
+        if(isset($_SESSION['benutzertyp'])&&$_SESSION['benutzertyp']=="admin") {
+            //Es wird nur ein 5er Table Header benötigt wenn der Knopf bearbeiten existiert also wenn der Benutzer ein Admin ist
+            echo "<th></th>";
+        }
         echo "</tr>";
         while ($row = $result->fetch_assoc()) {
+            // Die Daten jeder Reihe werden ausgegeben
             $id = $row["produktID"];
             $name = mysqli_real_escape_string($conn,$row["name"]);
             $preis = mysqli_real_escape_string($conn,$row["preis"]);
@@ -27,15 +34,18 @@
             echo "<td>".$lagerbestand."</td>";
             if(isset($_SESSION['benutzertyp'])&&$_SESSION['benutzertyp']=="admin")
             {
-              echo "<td><a href='produkt_editieren.php?id=".$id."' class='btn btn-primary edit' role='button'>Bearbeiten</a></td>";
+              //Wenn der Benutzer ein Admin ist werden die Buttons löschen und bearbeiten angezeigt
+              echo "<td><a href='produkt_editieren.php?id=".$id."' class='btn btn-light edit' role='button'>Bearbeiten</a></td>";
               echo "<td><a href='produkt_loeschen.php?id=".$id."' class='btn btn-danger edit red' role='button'>Löschen</a></td>";
             }else{
+                //Sons wird nur der Knopf Kaufen angezeigt
                 echo "<td><a href='warenkorb_hinzufuegen.php?id=".$id."' class='btn btn-success' role='button'>Kaufen</a></td>";
             }
             echo "</tr>";
         }            
         echo "</table>";
       } else {
+        //Wenn keine Daten verfügbar sind wird dieser Fehler ausgegeben
         echo "Keine Daten verfügbar";
         sleep(3);
 
