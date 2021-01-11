@@ -1,6 +1,10 @@
 <?php
     //Verbindung zu Datenbank wird hergestellt
     include("dbconnect.php");
+    //Falls nicht angemeldet wird die Session Variable Benutzertyp leer initialisiert
+    if(!isset($_SESSION['benutzertyp'])){
+        $_SESSION['benutzertyp'] = "";
+    }
     if(isset($_POST['search'])){
       $suchtext = $_POST['search'];
       //Falls eine Suchabfrage getätigt wurde, wird nach dem Suchtext gesucht
@@ -11,6 +15,7 @@
     }
     if ($result->num_rows > 0) {
         //Wenn das Resultat mindestens 1 Datenreihen enthält
+
         echo "<table class='table produkte'>";
         echo "<tr>";
         echo "<th>Name</th>";
@@ -31,7 +36,13 @@
             echo "<tr>";
             echo "<td>".$name."</td>";
             echo "<td>".$preis."</td>";
-            echo "<td>".$lagerbestand."</td>";
+            //Anzeige bei geringem Lagerbestand für Admin
+            if($lagerbestand < 10 && $_SESSION['benutzertyp'] == "admin") {
+                echo "<td><b style='color:red'>". $lagerbestand . "</b></td>";;
+            }
+            else
+                echo "<td>".$lagerbestand."</td>";
+
             if(isset($_SESSION['benutzertyp'])&&$_SESSION['benutzertyp']=="admin")
             {
               //Wenn der Benutzer ein Admin ist werden die Buttons löschen und bearbeiten angezeigt

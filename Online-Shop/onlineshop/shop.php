@@ -13,7 +13,6 @@
     <!-- Bootstrap und eigenes Stylesheet werden eingebunden -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="js/bootstrap.min.js">
 
 </head>
 <body>
@@ -50,6 +49,7 @@
             <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Suchen</button>
         </form>
     </nav>
+
     <?php
         //Produktliste wird abgerufen
         include("produkteliste.php")

@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <?php
     session_start();
     //Verbindung zu Datenbank wird hergestellt
@@ -30,6 +33,26 @@
             //Die Werte ID und Anzahl werden der Array entnommen
             $idProdukt = $produktWert[0];
             $anzahlProdukt = $produktWert[1];
+
+            //Wenn der Lagerbestand zu Gering ist wird die Bestellung nicht ausgeführt und der Benutzer wird informiert
+            $produkt = "SELECT * FROM produkt WHERE produktID = $idProdukt";
+            $lagerbestand = (int)$conn->query($produkt)->fetch_assoc()['lagerbestand'];
+            $produktName = $conn->query($produkt)->fetch_assoc()['name'];
+            if($lagerbestand - $anzahlProdukt <= 0){
+                echo"<p>Produkt $produktName hat einen zu geringen Lagerbestand</p>";
+                echo"<p><a href='shop.php'>Zurück</a></p>";
+                unset($_SESSION['warenkorb']);
+                //Alle Produkte welche bei dieser Bestellung schon zur Tabelle bestellung_produkt hinzugefügt wurden, werden aus der Datenbank gelöscht
+                $sql = "DELETE FROM bestellung_produkt WHERE bestellungsID = $idBestellug";
+                $res = $conn->query($sql);
+                exit();
+            }
+
+            //Anzahl der Bestellten Produkte werden dem Lagerbestand abgezogen
+            $lagerbestand -= $anzahlProdukt;
+            $sql = "UPDATE produkt SET lagerbestand = $lagerbestand WHERE produktID = $idProdukt";
+            $res = $conn->query($sql);
+
             //Für jedes Produkt wird ein Eintrag in der Tabelle bestellung_produkt hinterlegt in welchem, die ID des Produktes, die ID der Bestellung und die Anzahl des Produktes gespeichert wird.
             $sql = "INSERT INTO bestellung_produkt(produktID, bestellungsID, anzahlProdukte) VALUES('$idProdukt','$idBestellug',$anzahlProdukt)";
             $res = $conn->query($sql);

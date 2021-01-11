@@ -17,9 +17,11 @@
         //BenutzerID wird abgerufen
         $benutzerID = $ergebnislogin['benutzerID'];
 
-        //Session Variablen Benutzertyp und BenutzerID werden deklariert
+        //Session Variablen Benutzertyp, Name, Email und BenutzerID werden deklariert
         $_SESSION['benutzertyp'] = $ergebnislogin['benutzertyp'];
         $_SESSION['benutzerID'] = $benutzerID;
+        $_SESSION['email'] = $ergebnislogin['email'];
+        $_SESSION['name'] = $ergebnislogin['vorname'];
         //Benutzer wird zu shop.php weitergeleitet
         header('Location: shop.php');
     }else{
