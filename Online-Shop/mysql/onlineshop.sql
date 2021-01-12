@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2021 at 01:11 PM
+-- Generation Time: Jan 12, 2021 at 08:20 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -34,7 +34,7 @@ CREATE TABLE `benutzer` (
   `nachname` varchar(30) NOT NULL,
   `adresse` varchar(30) NOT NULL,
   `benutzername` varchar(30) NOT NULL,
-  `email` varchar(30) NOT NULL,
+  `email` varchar(40) NOT NULL,
   `benutzertyp` varchar(30) NOT NULL,
   `passwort` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -44,9 +44,8 @@ CREATE TABLE `benutzer` (
 --
 
 INSERT INTO `benutzer` (`benutzerID`, `vorname`, `nachname`, `adresse`, `benutzername`, `email`, `benutzertyp`, `passwort`) VALUES
-(2, 'albert', 'gstöhl', 'Winkel 16', 'albert.gstoehl', 'albert.gstoehl@gmail.com', 'admin', '$2y$10$vymOv.ZtZ5OC.cla8YmkTeYXNqjj1cyN9OIsWOraDEJ3l0osMtq96'),
-(24, 'Albert', 'Gstöhl', 'Winkel 16', 'a.gstoehl', 'albertgstoehl@outlook.com', 'benutzer', '$2y$10$syVaewJ7Eh0qnhO4av78Ke7880fuB7MW7y27JkPWXHheG4u09yv7.'),
-(42, 'asdf', 'asdf', 'asdf', 'asdf', 'asdfljaslfj@gmail.com', 'benutzer', '$2y$10$kdVkDVXPZeNq.NWfvJthuOMZY.a71yxPEHAbEKjx22DqnmS1LENfC');
+(24, 'Albert', 'Gstöhl', 'Winkel 16', 'a.gstoehl', 'albertgstoehl@gmail.com', 'admin', '$2y$10$vioSQ7usY1cV5St2DpvPoOoK5q2D.9P.cgdbNW8O63oEI3EuWgtwe'),
+(48, 'Lisa', 'Gstöhl', 'Winkel 16', 'lisa.gstoehl', 'lisa.gstoehl@bluewin.ch', 'benutzer', '$2y$10$Grxdaw935NsPOEB1lhzXBucB7Dh4n7evneYN7YBf07aJPrJ9f.sKG');
 
 -- --------------------------------------------------------
 
@@ -77,7 +76,47 @@ INSERT INTO `bestellung` (`bestellungID`, `kundeID`, `bestellungsDatum`) VALUES
 (34, 24, '2020-12-18'),
 (35, 24, '2020-12-30'),
 (36, 24, '2021-01-06'),
-(37, 24, '2021-01-06');
+(37, 24, '2021-01-06'),
+(38, 24, '2021-01-10'),
+(39, 24, '2021-01-10'),
+(40, 24, '2021-01-11'),
+(41, 24, '2021-01-11'),
+(42, 24, '2021-01-11'),
+(43, 24, '2021-01-11'),
+(44, 24, '2021-01-11'),
+(45, 24, '2021-01-11'),
+(46, 24, '2021-01-11'),
+(47, 24, '2021-01-11'),
+(48, 24, '2021-01-11'),
+(49, 24, '2021-01-11'),
+(50, 24, '2021-01-11'),
+(51, 24, '2021-01-11'),
+(52, 24, '2021-01-11'),
+(61, 24, '2021-01-11'),
+(62, 24, '2021-01-11'),
+(63, 24, '2021-01-11'),
+(64, 24, '2021-01-11'),
+(65, 24, '2021-01-11'),
+(66, 24, '2021-01-11'),
+(67, 24, '2021-01-11'),
+(68, 24, '2021-01-11'),
+(69, 24, '2021-01-11'),
+(70, 24, '2021-01-11'),
+(71, 24, '2021-01-11'),
+(72, 24, '2021-01-11'),
+(73, 24, '2021-01-11'),
+(74, 24, '2021-01-11'),
+(75, 24, '2021-01-11'),
+(76, 24, '2021-01-11'),
+(77, 24, '2021-01-11'),
+(78, 24, '2021-01-11'),
+(79, 24, '2021-01-11'),
+(80, 24, '2021-01-11'),
+(81, 24, '2021-01-11'),
+(82, 24, '2021-01-11'),
+(83, 24, '2021-01-11'),
+(84, 24, '2021-01-11'),
+(95, 24, '2021-01-11');
 
 -- --------------------------------------------------------
 
@@ -137,7 +176,90 @@ INSERT INTO `bestellung_produkt` (`bestellung_produktID`, `produktID`, `anzahlPr
 (74, 5, 1, 37),
 (75, 9, 2, 37),
 (76, 8, 1, 37),
-(77, 7, 1, 37);
+(77, 7, 1, 37),
+(78, 5, 2, 38),
+(79, 6, 2, 38),
+(80, 7, 2, 38),
+(81, 9, 2, 38),
+(82, 5, 2, 39),
+(83, 6, 2, 39),
+(84, 7, 2, 39),
+(85, 5, 2, 40),
+(86, 6, 2, 40),
+(87, 9, 2, 40),
+(88, 10, 2, 40),
+(89, 11, 1, 40),
+(90, 6, 3, 41),
+(91, 5, 2, 42),
+(92, 6, 2, 42),
+(93, 6, 2, 43),
+(94, 7, 2, 43),
+(95, 8, 2, 43),
+(96, 10, 3, 43),
+(97, 5, 2, 44),
+(98, 6, 2, 44),
+(99, 7, 2, 44),
+(100, 5, 2, 45),
+(101, 6, 2, 45),
+(102, 7, 2, 45),
+(103, 5, 2, 46),
+(104, 6, 2, 46),
+(105, 7, 2, 46),
+(106, 5, 2, 47),
+(107, 6, 1, 47),
+(108, 8, 1, 47),
+(109, 5, 2, 48),
+(110, 6, 2, 48),
+(111, 7, 2, 48),
+(112, 8, 1, 48),
+(113, 5, 2, 49),
+(114, 6, 1, 49),
+(115, 5, 4, 50),
+(116, 6, 4, 50),
+(117, 7, 2, 50),
+(118, 8, 2, 50),
+(119, 7, 2, 51),
+(120, 8, 2, 51),
+(121, 9, 2, 51),
+(122, 10, 1, 51),
+(123, 5, 2, 52),
+(124, 6, 2, 52),
+(125, 7, 1, 52),
+(126, 8, 1, 52),
+(161, 5, 2, 61),
+(162, 6, 2, 61),
+(163, 5, 2, 62),
+(164, 6, 2, 62),
+(165, 7, 1, 62),
+(166, 6, 2, 63),
+(167, 7, 1, 63),
+(168, 8, 1, 63),
+(169, 5, 2, 64),
+(170, 6, 1, 64),
+(171, 5, 2, 65),
+(172, 6, 2, 65),
+(173, 7, 2, 65),
+(174, 8, 2, 65),
+(175, 9, 2, 65),
+(176, 13, 3, 69),
+(177, 13, 3, 70),
+(178, 13, 4, 71),
+(179, 7, 2, 72),
+(180, 8, 1, 72),
+(181, 9, 2, 72),
+(182, 13, 5, 73),
+(183, 11, 2, 74),
+(184, 12, 1, 74),
+(185, 8, 6, 75),
+(186, 13, 4, 76),
+(187, 13, 3, 77),
+(188, 13, 4, 78),
+(189, 13, 4, 79),
+(190, 11, 1, 84),
+(191, 8, 1, 84),
+(214, 13, 4, 95),
+(215, 10, 3, 95),
+(216, 8, 2, 95);
 
 -- --------------------------------------------------------
 
@@ -157,15 +279,15 @@ CREATE TABLE `produkt` (
 --
 
 INSERT INTO `produkt` (`produktID`, `name`, `preis`, `lagerbestand`) VALUES
-(5, 'Stift', 1.25, 12364),
-(6, 'Socken', 23.45, 333),
-(7, 'Schuhe', 3.5, 2324),
-(8, 'Waschmaschine', 333, 12),
+(5, 'Stift', 1.25, 12355),
+(6, 'Socken', 23.45, 324),
+(7, 'Schuhe', 3.5, 2319),
+(8, 'Waschmaschine', 333, 6),
 (9, 'Zigaretten', 8.5, 350),
-(10, 'Taschenlampe', 20, 50),
+(10, 'Taschenlampe', 20, 47),
 (11, 'Lautsprecher', 150, 10),
 (12, 'Monitor', 400, 44),
-(13, 'Plattenspieler', 300, 2);
+(13, 'Plattenspieler', 300, 6);
 
 --
 -- Indexes for dumped tables
@@ -206,25 +328,25 @@ ALTER TABLE `produkt`
 -- AUTO_INCREMENT for table `benutzer`
 --
 ALTER TABLE `benutzer`
-  MODIFY `benutzerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `benutzerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `bestellung`
 --
 ALTER TABLE `bestellung`
-  MODIFY `bestellungID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `bestellungID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `bestellung_produkt`
 --
 ALTER TABLE `bestellung_produkt`
-  MODIFY `bestellung_produktID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `bestellung_produktID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=232;
 
 --
 -- AUTO_INCREMENT for table `produkt`
 --
 ALTER TABLE `produkt`
-  MODIFY `produktID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `produktID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
@@ -234,14 +356,14 @@ ALTER TABLE `produkt`
 -- Constraints for table `bestellung`
 --
 ALTER TABLE `bestellung`
-  ADD CONSTRAINT `kundeID` FOREIGN KEY (`kundeID`) REFERENCES `benutzer` (`benutzerID`);
+  ADD CONSTRAINT `kundeID` FOREIGN KEY (`kundeID`) REFERENCES `benutzer` (`benutzerID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `bestellung_produkt`
 --
 ALTER TABLE `bestellung_produkt`
-  ADD CONSTRAINT `bestellungID` FOREIGN KEY (`bestellungsID`) REFERENCES `bestellung` (`bestellungID`),
-  ADD CONSTRAINT `produktID` FOREIGN KEY (`produktID`) REFERENCES `produkt` (`produktID`);
+  ADD CONSTRAINT `bestellungID` FOREIGN KEY (`bestellungsID`) REFERENCES `bestellung` (`bestellungID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `produktID` FOREIGN KEY (`produktID`) REFERENCES `produkt` (`produktID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
