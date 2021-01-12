@@ -26,6 +26,7 @@
                         //Buttons, welche zu Admin funktionen weiterleiten: Benutzerübersicht, Produkt hinzufügen
                         echo '<a href="benutzeruebersicht.php" class="float-left btn btn-outline-dark">Benutzerübersicht</a>';
                         echo '<a href="produkt_erstellen.php" class="float-left btn btn-outline-success">Produkt hinzufügen</a>';
+                        echo '<a href="logout.php" class="float-left btn btn-outline-danger">Logout</a>';
                     }elseif($_SESSION['benutzertyp']=="benutzer"){
                         //Der Logut Button steht allen Benutzern, welche über ein Benutzertyp verfügen, zur verfügung
                         echo '<a href="warenkorb.php" class="float-left btn btn-outline-success">Warenkorb</a>';
