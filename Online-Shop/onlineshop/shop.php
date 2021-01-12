@@ -1,8 +1,6 @@
 <?php
-    if(!isset($_SESSION))
-    {
-        session_start();
-    }
+    session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,17 +26,17 @@
                         //Buttons, welche zu Admin funktionen weiterleiten: Benutzerübersicht, Produkt hinzufügen
                         echo '<a href="benutzeruebersicht.php" class="float-left btn btn-outline-dark">Benutzerübersicht</a>';
                         echo '<a href="produkt_erstellen.php" class="float-left btn btn-outline-success">Produkt hinzufügen</a>';
-                    }else{
-                        // Wenn der Benutzer kein Admin ist wird ihm der Warenkorb Button angezeigt
+                    }elseif($_SESSION['benutzertyp']=="benutzer"){
+                        //Der Logut Button steht allen Benutzern, welche über ein Benutzertyp verfügen, zur verfügung
                         echo '<a href="warenkorb.php" class="float-left btn btn-outline-success">Warenkorb</a>';
+                        echo '<a href="logout.php" class="float-left btn btn-outline-danger">Logout</a>';
+                    }else{
+                        echo '<a href="warenkorb.php" class="float-left btn btn-outline-success">Warenkorb</a>';
+                        echo '<a href="benutzer_login.php" class="float-left btn btn-outline-success">Login</a>';
                     }
-                    //Der Logut Button steht allen Benutzern, welche über ein Benutzertyp verfügen, zur verfügung
-                    echo '<a href="logout.php" class="float-left btn btn-outline-danger">Logout</a>';
-
                 }else{
-                    // Die Buttons Login und Warenkorb werden angezeigt wenn kein benutzertyp gesetzt ist
-                    echo '<a href="login.php" class="float-left btn btn-outline-success">Login</a>';
                     echo '<a href="warenkorb.php" class="float-left btn btn-outline-success">Warenkorb</a>';
+                    echo '<a href="benutzer_login.php" class="float-left btn btn-outline-success">Login</a>';
                 }
             ?>
         </div>

@@ -44,7 +44,6 @@
     $kundeNachname = $kunde['nachname'];
 
     //Lieferadresse wird ausgegeben
-    ob_start();
     echo "<p><strong>Lieferadresse:<br /></strong>$kundeNachname $kundeVorame<br />$kundeAdresse</p>";
 
     echo "<table class='table'>";
@@ -79,10 +78,6 @@
     echo "</tr>";
 
     echo "</table>";
-    //HTML ausgabe wird in eine Session Variable kopiert
-    $_SESSION['contentEmail'] = ob_get_contents();
-    //Email wird an den Kunden gesendet
-    include('send_email.php');
 
 
     $conn->close();

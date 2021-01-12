@@ -6,7 +6,7 @@
     //Verbindung zu Datenbank wird hergestellt
     include('dbconnect.php');
     //Wenn der Benutzer nicht eingeloggt ist muss er sich vor dem bestellen zuerst einloggen
-    if(!isset($_SESSION['benutzertyp'])){
+    if(!isset($_SESSION['benutzertyp'])||$_SESSION['benutzertyp']==""){
         // Benutzer wird zu login.php weitergeleitet
         header('Location: login.php');
         exit();
