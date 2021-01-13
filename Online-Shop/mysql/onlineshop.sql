@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2021 at 08:20 PM
+-- Generation Time: Jan 13, 2021 at 01:33 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -44,8 +44,10 @@ CREATE TABLE `benutzer` (
 --
 
 INSERT INTO `benutzer` (`benutzerID`, `vorname`, `nachname`, `adresse`, `benutzername`, `email`, `benutzertyp`, `passwort`) VALUES
-(24, 'Albert', 'Gstöhl', 'Winkel 16', 'a.gstoehl', 'albertgstoehl@gmail.com', 'admin', '$2y$10$vioSQ7usY1cV5St2DpvPoOoK5q2D.9P.cgdbNW8O63oEI3EuWgtwe'),
-(48, 'Lisa', 'Gstöhl', 'Winkel 16', 'lisa.gstoehl', 'lisa.gstoehl@bluewin.ch', 'benutzer', '$2y$10$Grxdaw935NsPOEB1lhzXBucB7Dh4n7evneYN7YBf07aJPrJ9f.sKG');
+(24, 'Albert', 'Gstöhl', 'Winkel 16', 'admin', 'agstoehl@kantisargans.ch', 'admin', '$2y$10$vioSQ7usY1cV5St2DpvPoOoK5q2D.9P.cgdbNW8O63oEI3EuWgtwe'),
+(48, 'Albert', 'Gstöhl', 'Winkel 16', 'benutzer', 'lisa.gstoehl@bluewin.ch', 'benutzer', '$2y$10$Grxdaw935NsPOEB1lhzXBucB7Dh4n7evneYN7YBf07aJPrJ9f.sKG'),
+(49, 'Lukas ', 'Fehr', 'Kantonsschule Sargans', 'admin.fehr', 'example@kantisargans.ch', 'admin', '$2y$10$zbJERbmBqntnhPm/Qg3xo.fM0ZBfPPn.3nfR.pdpKrjt0Vt4/0ODm'),
+(50, 'Lukas', 'Fehr', 'Kantonsschule Sargans', 'benutzer.fehr', 'lukas.fehr@kantisargans.ch', 'benutzer', '$2y$10$hsRI1Jtqkv/8pOVLv7olHuVzdFsoxrm84oljNQ22JwlY06DHAGGb6');
 
 -- --------------------------------------------------------
 
@@ -116,7 +118,13 @@ INSERT INTO `bestellung` (`bestellungID`, `kundeID`, `bestellungsDatum`) VALUES
 (82, 24, '2021-01-11'),
 (83, 24, '2021-01-11'),
 (84, 24, '2021-01-11'),
-(95, 24, '2021-01-11');
+(95, 24, '2021-01-11'),
+(100, 24, '2021-01-13'),
+(101, 24, '2021-01-13'),
+(102, 24, '2021-01-13'),
+(103, 24, '2021-01-13'),
+(104, 24, '2021-01-13'),
+(105, 24, '2021-01-13');
 
 -- --------------------------------------------------------
 
@@ -259,7 +267,29 @@ INSERT INTO `bestellung_produkt` (`bestellung_produktID`, `produktID`, `anzahlPr
 (191, 8, 1, 84),
 (214, 13, 4, 95),
 (215, 10, 3, 95),
-(216, 8, 2, 95);
+(216, 8, 2, 95),
+(232, 5, 2, 100),
+(233, 6, 1, 100),
+(234, 5, 2, 101),
+(235, 6, 2, 101),
+(236, 7, 1, 101),
+(237, 5, 2, 102),
+(238, 6, 1, 102),
+(239, 7, 1, 102),
+(240, 5, 2, 103),
+(241, 6, 1, 103),
+(242, 7, 1, 103),
+(243, 8, 1, 103),
+(244, 9, 1, 103),
+(245, 5, 2, 104),
+(246, 6, 1, 104),
+(247, 7, 1, 104),
+(248, 8, 1, 104),
+(249, 9, 1, 104),
+(250, 5, 1, 105),
+(251, 6, 1, 105),
+(252, 7, 1, 105),
+(253, 8, 2, 105);
 
 -- --------------------------------------------------------
 
@@ -279,11 +309,11 @@ CREATE TABLE `produkt` (
 --
 
 INSERT INTO `produkt` (`produktID`, `name`, `preis`, `lagerbestand`) VALUES
-(5, 'Stift', 1.25, 12355),
-(6, 'Socken', 23.45, 324),
-(7, 'Schuhe', 3.5, 2319),
-(8, 'Waschmaschine', 333, 6),
-(9, 'Zigaretten', 8.5, 350),
+(5, 'Stift', 1.25, 12344),
+(6, 'Socken', 23.45, 317),
+(7, 'Schuhe', 3.5, 2314),
+(8, 'Waschmaschine', 333, 2),
+(9, 'Zigaretten', 8.5, 348),
 (10, 'Taschenlampe', 20, 47),
 (11, 'Lautsprecher', 150, 10),
 (12, 'Monitor', 400, 44),
@@ -328,19 +358,19 @@ ALTER TABLE `produkt`
 -- AUTO_INCREMENT for table `benutzer`
 --
 ALTER TABLE `benutzer`
-  MODIFY `benutzerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `benutzerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `bestellung`
 --
 ALTER TABLE `bestellung`
-  MODIFY `bestellungID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `bestellungID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT for table `bestellung_produkt`
 --
 ALTER TABLE `bestellung_produkt`
-  MODIFY `bestellung_produktID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=232;
+  MODIFY `bestellung_produktID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=254;
 
 --
 -- AUTO_INCREMENT for table `produkt`
