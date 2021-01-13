@@ -16,3 +16,4 @@
         $_SESSION['warenkorb'][] = [$id,1];
     }
     header('Location: shop.php');
+?>

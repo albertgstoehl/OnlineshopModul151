@@ -1,4 +1,4 @@
-//Stylesheet wird eingebunden
+<!--Bootstrap wird eingebunden-->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 
 <?php

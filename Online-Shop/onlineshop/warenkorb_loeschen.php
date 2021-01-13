@@ -20,3 +20,4 @@
     //Benutzer wird auf die Warenkorbseite zurückgeleitet
     header('Location: warenkorb.php');
     exit();
+?>

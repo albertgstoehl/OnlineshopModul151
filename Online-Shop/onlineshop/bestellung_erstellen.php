@@ -1,3 +1,4 @@
+<!--Bootstrap und eigenes Stylesheet wird eingebunden-->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

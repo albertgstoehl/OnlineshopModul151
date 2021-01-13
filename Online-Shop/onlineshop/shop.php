@@ -11,7 +11,6 @@
     <!-- Bootstrap und eigenes Stylesheet werden eingebunden -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
     <!-- Navigationsliste -->
