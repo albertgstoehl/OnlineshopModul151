@@ -1,11 +1,12 @@
-<?
+<?php
+    session_start();
+
     //Abfrage ob der Benutzer ein Admin ist
     include("isAdmin.php");
     //Verbindung zu Datenbank wird hergestellt
     include("dbconnect.php");
-
     //Daten werden per POST eingelesen
-    $id = $conn -> real_escape_string($_POST['id']);
+    $id = $conn->real_escape_string($_POST['id']);
     $vorname = $conn -> real_escape_string($_POST['vorname']);
     $nachname = $conn -> real_escape_string($_POST['nachname']);
     $adresse = $conn -> real_escape_string($_POST['adresse']);
@@ -20,7 +21,7 @@
     $ergebnismailadresse = $conn->query($sqlmailadresse);
     //Das Ergebnis wird in eine Array umgewandelt
     $ergebnismailadresseArray = $ergebnismailadresse->fetch_assoc();
-    
+
     //Wenn es jemanden mit derselben Email gibt und die E-Mail nicht gleichgeblieben ist
     if($ergebnismailadresse->num_rows>=1 && $ergebnismailadresseArray['email'] != $email){
         //Benutzer wird über den Fehler informiert
