@@ -43,6 +43,7 @@
     $kundeVorame = $kunde['vorname'];
     $kundeNachname = $kunde['nachname'];
 
+    ob_start();
     //Lieferadresse wird ausgegeben
     echo "<p><strong>Lieferadresse:<br /></strong>$kundeNachname $kundeVorame<br />$kundeAdresse</p>";
 
@@ -76,8 +77,10 @@
     //Total aller Produkte wird angezeigt
     echo "<td><u>".$totalAlle." Fr.</u></td>";
     echo "</tr>";
-
     echo "</table>";
+    //Aller HTML Code seit ob_start() wird eingelesen
+    $_SESSION['contentEmail'] = ob_get_contents();
+    include("send_email.php");
 
 
     $conn->close();
